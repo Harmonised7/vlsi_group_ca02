@@ -1,0 +1,6 @@
+go_again: 	input s1,01
+		input s2,02
+		output s1,02
+		output s2,01
+		jump go_again
+		

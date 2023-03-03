@@ -36,4 +36,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log main.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source main.tcl
+EAStep vivado -log GroupBlinkingLed.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source GroupBlinkingLed.tcl

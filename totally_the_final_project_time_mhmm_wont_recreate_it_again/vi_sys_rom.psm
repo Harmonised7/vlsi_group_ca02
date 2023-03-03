@@ -1,0 +1,17 @@
+turn_on:
+    load    s4, 55
+    output  s4, 00
+
+start_delay:
+    load    s0, fa
+inner_delay_0:
+    sub     s0, 01
+    load    s1, fa
+    jump    nz, inner_delay_1
+inner_delay_1:
+    sub     s1, 01
+    load    s2, c8
+    jump    nz, inner_delay_2
+
+end_delay:
+    return

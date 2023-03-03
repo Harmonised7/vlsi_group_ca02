@@ -1,6 +1,7 @@
    turn_on: 
             LOAD s4, 01
             OUTPUT s4, 00
+            JUMP turn_on
             LOAD s0, FA
  on_loop_0: 
             TEST s0, 00

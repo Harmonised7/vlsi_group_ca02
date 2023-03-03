@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1677864169">
+  <File Type="VDS-TIMING-PB" Name="vi_sys_top_level_timing_summary_synth.pb"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="vi_sys_top_level_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="vi_sys_top_level.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="vi_sys_top_level_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="vi_sys_top_level_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="vi_sys_top_level_drc_synth.rpt"/>
+  <File Type="RDS-RDS" Name="vi_sys_top_level.vds"/>
+  <File Type="REPORTS-TCL" Name="vi_sys_top_level_reports.tcl"/>
+  <File Type="PA-TCL" Name="vi_sys_top_level.tcl"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/imports/daves_soc_example/kcpsm6.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../daves_soc_example/kcpsm6.vhd"/>
+        <Attr Name="ImportTime" Val="1400661852"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/daves_soc_example/vi_input_ports.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../daves_soc_example/vi_input_ports.vhd"/>
+        <Attr Name="ImportTime" Val="1677860361"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/daves_soc_example/vi_output_ports.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../daves_soc_example/vi_output_ports.vhd"/>
+        <Attr Name="ImportTime" Val="1677860350"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/vi_sys_rom.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/daves_soc_example/vi_system_top_level.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../daves_soc_example/vi_system_top_level.vhd"/>
+        <Attr Name="ImportTime" Val="1677860285"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="vi_sys_top_level"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/imports/group/basys3.xdc">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../practical_1_v3/practical_1_v3.srcs/constrs_1/imports/group/basys3.xdc"/>
+        <Attr Name="ImportTime" Val="1677856415"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020"/>
+    <Step Id="synth_design"/>
+  </Strategy>
+</GenRun>
