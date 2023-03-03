@@ -34,7 +34,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity main is
     Port ( clk, reset : in STD_LOGIC;
            sw : in STD_LOGIC;
-           led : out STD_LOGIC;
+           led : out std_logic_vector(7 downto 0);
            indicator : out STD_LOGIC);
 end main;
 
@@ -117,7 +117,7 @@ interrupt <= interrupt_ack;
                    port_id => port_id,
               write_strobe => write_strobe,
             k_write_strobe => k_write_strobe,
-                  out_port => sled, --s_out_port,
+                  out_port => s_out_port, --sled;
                read_strobe => read_strobe,
                    in_port => in_port,
                  interrupt => interrupt,
@@ -149,5 +149,5 @@ begin
 end process;
 
 indicator <= '1';
-led <= '1'; --sled(0);
+led <= sled;
 end Behavioral;

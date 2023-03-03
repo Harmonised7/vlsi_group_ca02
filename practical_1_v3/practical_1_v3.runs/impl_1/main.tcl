@@ -17,7 +17,7 @@ proc create_report { reportName command } {
   }
 }
 namespace eval ::optrace {
-  variable script "/media/2TB_Crucial_SSD/repos/school/year_4_sem_2/VLSI/group/practical_1_v3/practical_1_v3.runs/impl_1/main.tcl"
+  variable script "/media/2TB_Crucial_SSD/repos/vlsi_group_ca02/practical_1_v3/practical_1_v3.runs/impl_1/main.tcl"
   variable category "vivado_impl"
 }
 
@@ -129,15 +129,15 @@ OPTRACE "create in-memory project" START { }
   set_param project.singleFileAddWarning.threshold 0
 OPTRACE "create in-memory project" END { }
 OPTRACE "set parameters" START { }
-  set_property webtalk.parent_dir /media/2TB_Crucial_SSD/repos/school/year_4_sem_2/VLSI/group/practical_1_v3/practical_1_v3.cache/wt [current_project]
-  set_property parent.project_path /media/2TB_Crucial_SSD/repos/school/year_4_sem_2/VLSI/group/practical_1_v3/practical_1_v3.xpr [current_project]
+  set_property webtalk.parent_dir /media/2TB_Crucial_SSD/repos/vlsi_group_ca02/practical_1_v3/practical_1_v3.cache/wt [current_project]
+  set_property parent.project_path /media/2TB_Crucial_SSD/repos/vlsi_group_ca02/practical_1_v3/practical_1_v3.xpr [current_project]
   set_property ip_output_repo /media/2TB_Crucial_SSD/repos/school/year_4_sem_2/VLSI/practical_1/practical_1_v3/practical_1_v3.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
-  add_files -quiet /media/2TB_Crucial_SSD/repos/school/year_4_sem_2/VLSI/group/practical_1_v3/practical_1_v3.runs/synth_1/main.dcp
+  add_files -quiet /media/2TB_Crucial_SSD/repos/vlsi_group_ca02/practical_1_v3/practical_1_v3.runs/synth_1/main.dcp
 OPTRACE "read constraints: implementation" START { }
-  read_xdc /media/2TB_Crucial_SSD/repos/school/year_4_sem_2/VLSI/group/practical_1_v3/practical_1_v3.srcs/constrs_1/imports/group/basys3.xdc
+  read_xdc /media/2TB_Crucial_SSD/repos/vlsi_group_ca02/practical_1_v3/practical_1_v3.srcs/constrs_1/imports/group/basys3.xdc
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "add files" END { }
 OPTRACE "link_design" START { }

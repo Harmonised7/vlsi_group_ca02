@@ -20,7 +20,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/media/2TB_Crucial_SSD/repos/school/year_4_sem_2/VLSI/group/practical_1_v3/practical_1_v3.runs/impl_1'
+HD_PWD='/media/2TB_Crucial_SSD/repos/vlsi_group_ca02/practical_1_v3/practical_1_v3.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

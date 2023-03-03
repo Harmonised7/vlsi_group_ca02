@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "/media/2TB_Crucial_SSD/repos/school/year_4_sem_2/VLSI/group/practical_1_v3/practical_1_v3.runs/synth_1/main.tcl"
+  variable script "/media/2TB_Crucial_SSD/repos/vlsi_group_ca02/practical_1_v3/practical_1_v3.runs/synth_1/main.tcl"
   variable category "vivado_synth"
 }
 
@@ -70,14 +70,15 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param chipscope.maxJobs 2
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a35ticpg236-1L
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir /media/2TB_Crucial_SSD/repos/school/year_4_sem_2/VLSI/group/practical_1_v3/practical_1_v3.cache/wt [current_project]
-set_property parent.project_path /media/2TB_Crucial_SSD/repos/school/year_4_sem_2/VLSI/group/practical_1_v3/practical_1_v3.xpr [current_project]
+set_property webtalk.parent_dir /media/2TB_Crucial_SSD/repos/vlsi_group_ca02/practical_1_v3/practical_1_v3.cache/wt [current_project]
+set_property parent.project_path /media/2TB_Crucial_SSD/repos/vlsi_group_ca02/practical_1_v3/practical_1_v3.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
 set_property ip_output_repo /media/2TB_Crucial_SSD/repos/school/year_4_sem_2/VLSI/practical_1/practical_1_v3/practical_1_v3.cache/ip [current_project]
@@ -85,9 +86,9 @@ set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_vhdl -library xil_defaultlib {
-  /media/2TB_Crucial_SSD/repos/school/year_4_sem_2/VLSI/group/practical_1_v3/code.vhd
-  /media/2TB_Crucial_SSD/repos/school/year_4_sem_2/VLSI/group/practical_1_v3/practical_1_v3.srcs/sources_1/imports/practical_1_v3/kcpsm6.vhd
-  /media/2TB_Crucial_SSD/repos/school/year_4_sem_2/VLSI/group/practical_1_v3/practical_1_v3.srcs/sources_1/new/main.vhd
+  /media/2TB_Crucial_SSD/repos/vlsi_group_ca02/practical_1_v3/code.vhd
+  /media/2TB_Crucial_SSD/repos/vlsi_group_ca02/practical_1_v3/practical_1_v3.srcs/sources_1/imports/practical_1_v3/kcpsm6.vhd
+  /media/2TB_Crucial_SSD/repos/vlsi_group_ca02/practical_1_v3/practical_1_v3.srcs/sources_1/new/main.vhd
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -98,8 +99,8 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc /media/2TB_Crucial_SSD/repos/school/year_4_sem_2/VLSI/group/practical_1_v3/practical_1_v3.srcs/constrs_1/imports/group/basys3.xdc
-set_property used_in_implementation false [get_files /media/2TB_Crucial_SSD/repos/school/year_4_sem_2/VLSI/group/practical_1_v3/practical_1_v3.srcs/constrs_1/imports/group/basys3.xdc]
+read_xdc /media/2TB_Crucial_SSD/repos/vlsi_group_ca02/practical_1_v3/practical_1_v3.srcs/constrs_1/imports/group/basys3.xdc
+set_property used_in_implementation false [get_files /media/2TB_Crucial_SSD/repos/vlsi_group_ca02/practical_1_v3/practical_1_v3.srcs/constrs_1/imports/group/basys3.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]

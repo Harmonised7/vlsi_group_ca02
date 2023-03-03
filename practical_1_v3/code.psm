@@ -1,7 +1,6 @@
 turn_on:
     load    s4, 01
     output  s4, 00
-    jump    turn_on
     load    s0, fa
 on_loop_0:
     test    s0, 00
