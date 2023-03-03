@@ -1,0 +1,50 @@
+turn_on:
+    load    s4, 01
+    output  s4, 00
+    jump    turn_on
+    load    s0, fa
+on_loop_0:
+    test    s0, 00
+    jump    NZ, turn_off
+    sub     s0, 01
+    load    s1, fa
+on_loop_1:
+    test    s1, 00
+    jump    NZ, on_loop_0
+    sub     s1, 01
+    load    s2, 84
+on_loop_2:
+    test    s2, 00
+    jump    NZ, on_loop_1
+    sub     s2, 01
+    load    s3, 06
+on_loop_3:
+    test    s3, 00
+    jump    NZ, on_loop_2
+    sub     s3, 01
+    jump    on_loop_3
+
+turn_off:
+    load    s4, 01
+    output  s4, 00
+    load    s0, fa
+off_loop_0:
+    test    s0, 00
+    jump    NZ, turn_on
+    sub     s0, 01
+    load    s1, fa
+off_loop_1:
+    test    s1, 00
+    jump    NZ, off_loop_0
+    sub     s1, 01
+    load    s2, 84
+off_loop_2:
+    test    s2, 00
+    jump    NZ, off_loop_1
+    sub     s2, 01
+    load    s3, 02
+off_loop_3:
+    test    s3, 00
+    jump    NZ, off_loop_2
+    sub     s3, 01
+    jump    off_loop_3

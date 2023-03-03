@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Fri Feb 24 14:04:50 2023
+# Process ID: 12021
+# Current directory: /media/2TB_Crucial_SSD/repos/school/year_4_sem_2/VLSI/group/practical_1_v3/practical_1_v3.runs/impl_1
+# Command line: vivado -log main.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source main.tcl -notrace
+# Log file: /media/2TB_Crucial_SSD/repos/school/year_4_sem_2/VLSI/group/practical_1_v3/practical_1_v3.runs/impl_1/main.vdi
+# Journal file: /media/2TB_Crucial_SSD/repos/school/year_4_sem_2/VLSI/group/practical_1_v3/practical_1_v3.runs/impl_1/vivado.jou
+#-----------------------------------------------------------
+source main.tcl -notrace

@@ -1,0 +1,49 @@
+   turn_on: 
+            LOAD s4, 01
+            OUTPUT s4, 00
+            JUMP turn_on
+            LOAD s0, FA
+ on_loop_0: 
+            TEST s0, 00
+            JUMP NZ, turn_off
+            SUB s0, 01
+            LOAD s1, FA
+ on_loop_1: 
+            TEST s1, 00
+            JUMP NZ, on_loop_0
+            SUB s1, 01
+            LOAD s2, 84
+ on_loop_2: 
+            TEST s2, 00
+            JUMP NZ, on_loop_1
+            SUB s2, 01
+            LOAD s3, 06
+ on_loop_3: 
+            TEST s3, 00
+            JUMP NZ, on_loop_2
+            SUB s3, 01
+            JUMP on_loop_3
+  turn_off: 
+            LOAD s4, 01
+            OUTPUT s4, 00
+            LOAD s0, FA
+off_loop_0: 
+            TEST s0, 00
+            JUMP NZ, turn_on
+            SUB s0, 01
+            LOAD s1, FA
+off_loop_1: 
+            TEST s1, 00
+            JUMP NZ, off_loop_0
+            SUB s1, 01
+            LOAD s2, 84
+off_loop_2: 
+            TEST s2, 00
+            JUMP NZ, off_loop_1
+            SUB s2, 01
+            LOAD s3, 02
+off_loop_3: 
+            TEST s3, 00
+            JUMP NZ, off_loop_2
+            SUB s3, 01
+            JUMP off_loop_3
