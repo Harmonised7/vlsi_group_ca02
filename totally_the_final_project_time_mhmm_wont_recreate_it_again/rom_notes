@@ -1,3 +1,25 @@
+load    s0, 250
+for/*for0*/(; i >= 0; )
+{
+    sub    s0, 01
+    jump    z, end
+    load    s1, 250
+    for/*for1*/(; i >= 0; )
+    {
+        sub    s1, 01
+        jump    z, for0
+        load    s2, 200
+        for/*for2*/(; i >= 0; )
+        {
+            sub    s2, 01
+            jump    z, for1
+            jump    for2
+        }
+    }
+}
+end:
+    return
+
 main:
     load    s4, 55
     output  s4, 00
@@ -5,8 +27,6 @@ main:
 
     load    s4, aa
     output  s4, 00
-    call start_delay
-    call start_delay
     call start_delay
     
     jump    main
