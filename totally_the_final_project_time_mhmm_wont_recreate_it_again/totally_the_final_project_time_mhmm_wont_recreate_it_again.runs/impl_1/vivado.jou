@@ -2,8 +2,8 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Fri Mar 10 15:49:03 2023
-# Process ID: 51709
+# Start of session at: Fri Mar 10 16:37:27 2023
+# Process ID: 88202
 # Current directory: /media/2TB_Crucial_SSD/repos/vlsi_group_ca02/totally_the_final_project_time_mhmm_wont_recreate_it_again/totally_the_final_project_time_mhmm_wont_recreate_it_again.runs/impl_1
 # Command line: vivado -log vi_sys_top_level.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source vi_sys_top_level.tcl -notrace
 # Log file: /media/2TB_Crucial_SSD/repos/vlsi_group_ca02/totally_the_final_project_time_mhmm_wont_recreate_it_again/totally_the_final_project_time_mhmm_wont_recreate_it_again.runs/impl_1/vi_sys_top_level.vdi

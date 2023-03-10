@@ -1,6 +1,8 @@
        main: 
-             INPUT s4, 00        ;   Inputs 2 - HZ control
-             AND s4, 80          ;   Mask s4 to 0b10000000
+             INPUT s4, 01        ;   Inputs 1 - switches 0-7
+             INPUT s5, 00        ;   Inputs 2 - switches 8-15
+             LOAD s6, s5
+             AND s6, 80          ;   Mask s4 to 0b00000001
              JUMP NZ, mode_1
              JUMP mode_2
              JUMP main           ;   mode_1 and mode_2 jump to main regardless, but just in case.
@@ -64,13 +66,16 @@
              JUMP main
     turn_on: 
              ; copy switch values to the corresponding LEDs
-             INPUT s3, 01        ;   Inputs 1 - LEDs
-             OUTPUT s3, 00
+             OUTPUT s4, 00       ;   Inputs 1 - switches 0-7
+             LOAD s6, s5
+             AND s6, 7F          ;   Mask s4 to 0b01111111 (last one is hz control)
+             OUTPUT s6, 01
              RETURN 
    turn_off: 
              ; set all LEDs to 0
-             LOAD s3, 00         ;   Outputs 1
-             OUTPUT s3, 00
+             LOAD s3, 00         ;   0s
+             OUTPUT s3, 00       ;   Outputs 1 - LEDs 0-7
+             OUTPUT s3, 01       ;   Outputs 1 - LEDs 8-14
              RETURN 
              ; Note: The iterators are 1 higher because we subtract first, then check.
              ; wait 0.025s

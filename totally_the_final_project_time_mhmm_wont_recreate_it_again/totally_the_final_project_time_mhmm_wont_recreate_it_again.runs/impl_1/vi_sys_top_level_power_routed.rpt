@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-| Date             : Fri Mar 10 15:50:01 2023
+| Date             : Fri Mar 10 16:38:22 2023
 | Host             : harmony running 64-bit Ubuntu 20.04.5 LTS
 | Command          : report_power -file vi_sys_top_level_power_routed.rpt -pb vi_sys_top_level_power_summary_routed.pb -rpx vi_sys_top_level_power_routed.rpx
 | Design           : vi_sys_top_level
@@ -53,15 +53,15 @@ Table of Contents
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
 | Clocks                   |    <0.001 |        3 |       --- |             --- |
-| Slice Logic              |    <0.001 |      311 |       --- |             --- |
+| Slice Logic              |    <0.001 |      312 |       --- |             --- |
 |   LUT as Logic           |    <0.001 |       92 |     20800 |            0.44 |
 |   LUT as Distributed RAM |    <0.001 |       24 |      9600 |            0.25 |
 |   CARRY4                 |    <0.001 |       10 |      8150 |            0.12 |
 |   Register               |    <0.001 |      107 |     41600 |            0.26 |
-|   Others                 |     0.000 |       20 |       --- |             --- |
+|   Others                 |     0.000 |       21 |       --- |             --- |
 | Signals                  |     0.001 |      253 |       --- |             --- |
 | Block RAM                |    <0.001 |      0.5 |        50 |            1.00 |
-| I/O                      |    <0.001 |       34 |       106 |           32.08 |
+| I/O                      |    <0.001 |       38 |       106 |           35.85 |
 | Static Power             |     0.072 |          |           |                 |
 | Total                    |     0.075 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+

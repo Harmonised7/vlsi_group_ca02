@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-| Date         : Fri Mar 10 15:50:01 2023
+| Date         : Fri Mar 10 16:38:22 2023
 | Host         : harmony running 64-bit Ubuntu 20.04.5 LTS
 | Command      : report_timing_summary -max_paths 10 -file vi_sys_top_level_timing_summary_routed.rpt -pb vi_sys_top_level_timing_summary_routed.pb -rpx vi_sys_top_level_timing_summary_routed.rpx -warn_on_violation
 | Design       : vi_sys_top_level
@@ -1364,9 +1364,6 @@ Min Period        n/a     FDRE/C              n/a            1.000         10.00
 Min Period        n/a     FDRE/C              n/a            1.000         10.000      9.000      SLICE_X8Y27    processor/address_loop[4].return_vector_flop/C
 Min Period        n/a     FDRE/C              n/a            1.000         10.000      9.000      SLICE_X9Y27    processor/address_loop[5].pc_flop/C
 Min Period        n/a     FDRE/C              n/a            1.000         10.000      9.000      SLICE_X8Y27    processor/address_loop[5].return_vector_flop/C
-Low Pulse Width   Slow    RAMD64E/CLK         n/a            1.250         5.000       3.750      SLICE_X10Y28   processor/data_path_loop[4].small_spm.small_spm_ram.spm_ram/RAMD/CLK
-Low Pulse Width   Slow    RAMD32/CLK          n/a            1.250         5.000       3.750      SLICE_X8Y28    processor/lower_reg_banks/RAMB_D1/CLK
-Low Pulse Width   Slow    RAMD32/CLK          n/a            1.250         5.000       3.750      SLICE_X8Y28    processor/lower_reg_banks/RAMC/CLK
 Low Pulse Width   Slow    RAMD32/CLK          n/a            1.250         5.000       3.750      SLICE_X8Y28    processor/lower_reg_banks/RAMC_D1/CLK
 Low Pulse Width   Slow    RAMS32/CLK          n/a            1.250         5.000       3.750      SLICE_X8Y28    processor/lower_reg_banks/RAMD/CLK
 Low Pulse Width   Slow    RAMS32/CLK          n/a            1.250         5.000       3.750      SLICE_X8Y28    processor/lower_reg_banks/RAMD_D1/CLK
@@ -1374,6 +1371,9 @@ Low Pulse Width   Fast    RAMD32/CLK          n/a            1.250         5.000
 Low Pulse Width   Fast    RAMD32/CLK          n/a            1.250         5.000       3.750      SLICE_X6Y27    processor/stack_ram_low/RAMC/CLK
 Low Pulse Width   Fast    RAMD32/CLK          n/a            1.250         5.000       3.750      SLICE_X6Y27    processor/stack_ram_low/RAMC_D1/CLK
 Low Pulse Width   Fast    RAMS32/CLK          n/a            1.250         5.000       3.750      SLICE_X6Y27    processor/stack_ram_low/RAMD/CLK
+Low Pulse Width   Fast    RAMS32/CLK          n/a            1.250         5.000       3.750      SLICE_X6Y27    processor/stack_ram_low/RAMD_D1/CLK
+Low Pulse Width   Slow    RAMD64E/CLK         n/a            1.250         5.000       3.750      SLICE_X10Y28   processor/data_path_loop[4].small_spm.small_spm_ram.spm_ram/RAMA/CLK
+Low Pulse Width   Slow    RAMD64E/CLK         n/a            1.250         5.000       3.750      SLICE_X10Y28   processor/data_path_loop[4].small_spm.small_spm_ram.spm_ram/RAMB/CLK
 High Pulse Width  Slow    RAMD64E/CLK         n/a            1.250         5.000       3.750      SLICE_X10Y29   processor/data_path_loop[0].small_spm.small_spm_ram.spm_ram/RAMA/CLK
 High Pulse Width  Slow    RAMD64E/CLK         n/a            1.250         5.000       3.750      SLICE_X10Y29   processor/data_path_loop[0].small_spm.small_spm_ram.spm_ram/RAMB/CLK
 High Pulse Width  Slow    RAMD64E/CLK         n/a            1.250         5.000       3.750      SLICE_X10Y29   processor/data_path_loop[0].small_spm.small_spm_ram.spm_ram/RAMC/CLK

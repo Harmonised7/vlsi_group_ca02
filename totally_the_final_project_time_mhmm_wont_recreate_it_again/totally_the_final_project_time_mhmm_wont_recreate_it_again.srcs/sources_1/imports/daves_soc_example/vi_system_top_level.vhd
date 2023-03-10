@@ -3,7 +3,9 @@ library IEEE;use IEEE.STD_LOGIC_1164.ALL;use IEEE.STD_LOGIC_ARITH.ALL;use IEEE.S
 entity vi_sys_top_level is
     Port ( clk,reset 	: in  std_logic;
            din1,din2	: in  std_logic_vector(7 downto 0);
-           dout1,dout2	: out  std_logic_vector(7 downto 0));
+           dout1,dout2	: out  std_logic_vector(7 downto 0);
+           an           : out std_logic_vector(3 downto 0)
+           );
 end vi_sys_top_level;
 
 architecture Behavioral of vi_sys_top_level is
@@ -29,7 +31,6 @@ component kcpsm6
                                reset : in std_logic;
                                  clk : in std_logic);
 end component;
-
 
 --the ROM:
 --------------------------------------------------------------------
@@ -73,6 +74,7 @@ signal sleep_sig,rdl_sig,reset_sig,bram_enable_sig:std_logic;
 
 begin
 --------------------------------------------------------------------
+an <= "1111";
 sleep_sig <= '0';
 interrupt_sig <= interrupt_ack_sig;
 reset_sig<=reset or rdl_sig;
