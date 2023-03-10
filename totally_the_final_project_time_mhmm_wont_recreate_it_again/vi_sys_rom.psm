@@ -1,26 +1,98 @@
+load s9, 80 ; mask 0b10000000
+
 main:
-    load    s4, 55
-    output  s4, 00
+    input   s4, 00  ;   Inputs 2 - HZ control
+    and     s4, s9  ;   Mask s4 to 0b10000000
+    jump    nz, mode_1
+    jump    mode_2
+    jump    main    ;   mode_1 and mode_2 jump to main regardless, but just in case.
+
+;1hz
+mode_1:
+    call turn_on
+
+    call start_delay
+    call start_delay
     call start_delay
 
-    load    s4, aa
-    output  s4, 00
-    call start_delay
-    call start_delay
-    call start_delay
+    call turn_off
     
-    jump    main
+    call start_delay
 
+    jump main
+
+;10hz
+mode_2:
+    call turn_on
+
+    call start_delay
+    call start_delay
+    call start_delay
+    call start_delay
+    call start_delay
+    call start_delay
+    call start_delay
+    call start_delay
+    call start_delay
+    call start_delay
+    call start_delay
+    call start_delay
+    call start_delay
+    call start_delay
+    call start_delay
+    call start_delay
+    call start_delay
+    call start_delay
+    call start_delay
+    call start_delay
+    call start_delay
+    call start_delay
+    call start_delay
+    call start_delay
+    call start_delay
+    call start_delay
+    call start_delay
+    call start_delay
+    call start_delay
+    call start_delay
+
+    call turn_off
+    
+    call start_delay
+    call start_delay
+    call start_delay
+    call start_delay
+    call start_delay
+    call start_delay
+    call start_delay
+    call start_delay
+    call start_delay
+    call start_delay
+
+    jump main
+
+turn_on:
+    input   s3, 01  ;   Inputs 1 - LEDs
+    load    s5, s3  ;   Outputs 1
+    output  s5, 00
+    return
+
+turn_off:
+    load    s5, 00  ;   Outputs 1
+    output  s5, 00
+    return
+
+; wait 0.025s
 start_delay:
-    load    s0, 250
+    load    s0, B6  ; dec 182
 delay_for_0:
     sub     s0, 01
     jump    z, delay_end
-    load    s1, 250
-delay_for_1:
+    load    s1, 36  ; dec 54
+delay_for_1: 
     sub     s1, 01
     jump    z, delay_for_0
-    load    s2, 200
+    load    s2, 2C  ; dec 44
 delay_for_2:
     sub     s2, 01
     jump    z, delay_for_1
