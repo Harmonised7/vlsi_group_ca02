@@ -1,22 +1,24 @@
-             LOAD s9, 80         ; mask 0b10000000
        main: 
              INPUT s4, 00        ;   Inputs 2 - HZ control
-             AND s4, s9          ;   Mask s4 to 0b10000000
+             AND s4, 80          ;   Mask s4 to 0b10000000
              JUMP NZ, mode_1
              JUMP mode_2
              JUMP main           ;   mode_1 and mode_2 jump to main regardless, but just in case.
-             ;1hz
+             ;10hz
      mode_1: 
              CALL turn_on
+             ; wait 75ms
              CALL start_delay
              CALL start_delay
              CALL start_delay
              CALL turn_off
+             ; wait 25ms
              CALL start_delay
              JUMP main
-             ;10hz
+             ;1hz
      mode_2: 
              CALL turn_on
+             ; wait 750ms
              CALL start_delay
              CALL start_delay
              CALL start_delay
@@ -48,6 +50,7 @@
              CALL start_delay
              CALL start_delay
              CALL turn_off
+             ; wait 250ms
              CALL start_delay
              CALL start_delay
              CALL start_delay
@@ -60,14 +63,16 @@
              CALL start_delay
              JUMP main
     turn_on: 
+             ; copy switch values to the corresponding LEDs
              INPUT s3, 01        ;   Inputs 1 - LEDs
-             LOAD s5, s3         ;   Outputs 1
-             OUTPUT s5, 00
+             OUTPUT s3, 00
              RETURN 
    turn_off: 
-             LOAD s5, 00         ;   Outputs 1
-             OUTPUT s5, 00
+             ; set all LEDs to 0
+             LOAD s3, 00         ;   Outputs 1
+             OUTPUT s3, 00
              RETURN 
+             ; Note: The iterators are 1 higher because we subtract first, then check.
              ; wait 0.025s
 start_delay: 
              LOAD s0, B6         ; dec 182
