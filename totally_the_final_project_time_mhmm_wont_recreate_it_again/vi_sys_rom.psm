@@ -2,9 +2,11 @@ main:
     input   s4, 01  ;   Inputs 1 - switches 0-7
     input   s5, 00  ;   Inputs 2 - switches 8-15
     
-    load    s6, s5
+    ; Frequency switch
+    load    s6, s5  ;   Take a copy of the 8-15 switch states
     and     s6, 80  ;   Mask s4 to 0b00000001
 
+    ; mode_1 or mode_2 decision
     jump    nz, mode_1
     jump    mode_2
     jump    main    ;   mode_1 and mode_2 jump to main regardless, but just in case.
@@ -81,7 +83,7 @@ turn_on:
     ; copy switch values to the corresponding LEDs
     output  s4, 00  ;   Inputs 1 - switches 0-7
     
-    load    s6, s5
+    load    s6, s5  ;   s5 stores the 8-15 switch states
     and     s6, 7F  ;   Mask s4 to 0b01111111 (last one is hz control)
     output  s6, 01
     
