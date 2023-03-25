@@ -1,0 +1,116 @@
+main:
+    input   s4, 01  ;   Inputs 1 - switches 0-7
+    input   s5, 00  ;   Inputs 2 - switches 8-15
+    
+    ; Frequency switch
+    load    s6, s5  ;   Take a copy of the 8-15 switch states
+    and     s6, 80  ;   Mask s4 to 0b00000001
+
+    ; mode_1 or mode_2 decision
+    jump    nz, mode_1
+    jump    mode_2
+    jump    main    ;   mode_1 and mode_2 jump to main regardless, but just in case.
+
+;10hz
+mode_1:
+    call turn_on
+
+    ; wait 75ms
+    call start_delay
+    call start_delay
+    call start_delay
+
+    call turn_off
+    
+    ; wait 25ms
+    call start_delay
+
+    jump main
+
+;1hz
+mode_2:
+    call turn_on
+
+    ; wait 750ms
+    call start_delay
+    call start_delay
+    call start_delay
+    call start_delay
+    call start_delay
+    call start_delay
+    call start_delay
+    call start_delay
+    call start_delay
+    call start_delay
+    call start_delay
+    call start_delay
+    call start_delay
+    call start_delay
+    call start_delay
+    call start_delay
+    call start_delay
+    call start_delay
+    call start_delay
+    call start_delay
+    call start_delay
+    call start_delay
+    call start_delay
+    call start_delay
+    call start_delay
+    call start_delay
+    call start_delay
+    call start_delay
+    call start_delay
+    call start_delay
+
+    call turn_off
+    
+    ; wait 250ms
+    call start_delay
+    call start_delay
+    call start_delay
+    call start_delay
+    call start_delay
+    call start_delay
+    call start_delay
+    call start_delay
+    call start_delay
+    call start_delay
+
+    jump main
+
+turn_on:
+    ; copy switch values to the corresponding LEDs
+    output  s4, 00  ;   Inputs 1 - switches 0-7
+    
+    load    s6, s5  ;   s5 stores the 8-15 switch states
+    and     s6, 7F  ;   Mask s4 to 0b01111111 (last one is hz control)
+    output  s6, 01
+    
+    return
+
+turn_off:
+    ; set all LEDs to 0
+    load    s3, 00  ;   0s
+    output  s3, 00  ;   Outputs 1 - LEDs 0-7
+    output  s3, 01  ;   Outputs 1 - LEDs 8-14
+    return
+
+; Note: The iterators are 1 higher because we subtract first, then check.
+; wait 0.025s
+start_delay:
+    load    s0, B6  ; dec 182
+delay_for_0:
+    sub     s0, 01
+    jump    z, delay_end
+    load    s1, 36  ; dec 54
+delay_for_1: 
+    sub     s1, 01
+    jump    z, delay_for_0
+    load    s2, 2C  ; dec 44
+delay_for_2:
+    sub     s2, 01
+    jump    z, delay_for_1
+    jump    delay_for_2
+delay_end:
+    return
